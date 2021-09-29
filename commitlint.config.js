@@ -1,7 +1,14 @@
+/* 
+  <type>(<scope>): <subject>
+空一行
+<body>
+空一行
+<foot></foot>
+ */
+
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
-    // 'subject-case': [0, 'never'],
     'type-enum': [
       2, //代表必须输入
       'always',
@@ -21,5 +28,6 @@ module.exports = {
         'build', //主要目的是修改项目构建系统(例如 glup，webpack，rollup 的配置等)的提交
       ],
     ],
+    'header-max-length': [0, 'always', 72], //header 最长72
   },
 };
