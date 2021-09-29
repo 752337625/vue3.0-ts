@@ -6,7 +6,9 @@
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
     "prepare": "husky install",
-    "npxi": "npm install -g npx"
+    "npxi": "npm install -g npx",
+    "eslint": "eslint --fix **/*.{js,jsx,vue}",
+    "prlint": "prettier --write **/*.{html,js,jsx,vue}"
   },
   "browserslist": [
     "> 1%",
