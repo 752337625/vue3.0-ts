@@ -6,14 +6,14 @@ module.exports = {
       2, //代表必须输入
       'always',
       [
-        'docs', // 仅仅修改了文档，比如README, CHANGELOG, CONTRIBUTE等等
-        'chore', //  改变构建流程、或者增加依赖库、工具等
         'feat', //  新增feature
         'fix', // 修复bug
-        'merge', // 仅进行分支合并.
-        'improvement', // 用于对当前实现进行改进而没有添加新功能或修复错误的提交.
-        'perf', // 优化相关，比如提升性能、体验
         'refactor', // 代码重构，没有加新功能或者修复bug
+        'docs', // 仅仅修改了文档，比如README, CHANGELOG, CONTRIBUTE等等
+        'chore', //  改变构建流程、或者增加依赖库、工具等
+        'merge', // 仅进行分支合并.
+        'perf', // 优化相关，比如提升性能、体验
+        'improvement', // 用于对当前实现进行改进而没有添加新功能或修复错误的提交.
         'revert', // 回滚到上一个版本
         'style', //  仅仅修改了空格、格式缩进、逗号等等，不改变代码逻辑
         'test', //  测试用例，包括单元测试、集成测试等
