@@ -28,6 +28,6 @@ module.exports = {
         'build', //主要目的是修改项目构建系统(例如 glup，webpack，rollup 的配置等)的提交
       ],
     ],
-    'header-max-length': [0, 'always', 72], //header 最长72
+    'header-max-length': [0, 'always', 2], //header 最长72
   },
 };
