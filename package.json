@@ -6,9 +6,9 @@
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
     "prepare": "husky install",
-    "npxi": "npm install -g npx",
-    "eslint": "eslint --fix **/*.{js,jsx,vue}",
-    "prlint": "prettier --write **/*.{html,js,jsx,vue}"
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --max-warnings 0 && prettier --check .",
+    "lint:fix": "eslint --fix . --ext .vue,.js,.ts,.jsx,.tsx && prettier --write ."
   },
   "browserslist": [
     "> 1%",
