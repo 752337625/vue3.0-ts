@@ -10,6 +10,9 @@
   "arrowParens": "avoid",
   "trailingComma": "all",
   "endOfLine": "auto",
+  "insertPragma": false,
+  "requirePragma": false,
+  "htmlWhitespaceSensitivity": "strict",
   "overrides": [
     {
       "files": ".prettierrc",

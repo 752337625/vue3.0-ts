@@ -1,20 +1,25 @@
 module.exports = {
   root: true,
-  parser: 'vue-eslint-parser',
+  parser: '@typescript-eslint/parser', //定义ESLint的解析器
   parserOptions: {
+    //指定ESLint可以解析tsx,jsx语法
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true,
       tsx: true,
+      jsx: true,
     },
   },
   env: {
+    //指定代码的运行环境
     browser: true,
     node: true,
   },
-  plugins: ['@typescript-eslint', 'prettier', 'import'],
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:vue/vue3-recommended', 'prettier'],
+
+  extends: ['plugin:@typescript-eslint/recommended', 'prettier'], //定义文件继承的子规范
+  plugins: ['@typescript-eslint', 'prettier'], //定义了该eslint文件所依赖的插件
+  // plugins: ['@typescript-eslint', 'prettier', 'import'],
+  // extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:vue/vue3-recommended', 'prettier'],
   overrides: [
     {
       files: ['*.ts', '*.vue'],
@@ -30,64 +35,8 @@ module.exports = {
     },
   ],
   rules: {
-    // js/ts
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': 'warn',
-    'no-redeclare': 'off',
-    '@typescript-eslint/no-redeclare': 'error',
-    'no-console': ['warn', {allow: ['error']}],
-    'no-restricted-syntax': ['error', 'LabeledStatement', 'WithStatement'],
-    camelcase: ['error', {properties: 'never'}],
-
-    'no-var': 'error',
-    'no-empty': ['error', {allowEmptyCatch: true}],
-    'no-with': 'error',
-    'no-void': 'error',
-    'prefer-const': ['warn', {destructuring: 'all', ignoreReadBeforeAssign: true}],
-    'prefer-template': 'error',
-    'object-shorthand': ['error', 'always', {ignoreConstructors: false, avoidQuotes: true}],
-    'block-scoped-var': 'error',
-    'no-constant-condition': ['error', {checkLoops: false}],
-
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-non-null-assertion': 'off',
-    '@typescript-eslint/no-non-null-asserted-optional-chain': 'off',
-    '@typescript-eslint/consistent-type-imports': ['error', {disallowTypeAnnotations: false}],
-
-    // vue
-    'vue/no-v-html': 'off',
-    'vue/require-default-prop': 'off',
-    'vue/require-explicit-emits': 'off',
-
-    'prettier/prettier': 'error',
-
-    // import
-    'import/first': 'error',
-    'import/no-duplicates': 'error',
-    'import/order': [
-      'error',
-      {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
-
-        pathGroups: [
-          {
-            pattern: 'vue',
-            group: 'external',
-            position: 'before',
-          },
-          {
-            pattern: '@vue/**',
-            group: 'external',
-            position: 'before',
-          },
-          {
-            pattern: '@element-plus/**',
-            group: 'internal',
-          },
-        ],
-        pathGroupsExcludedImportTypes: ['type'],
-      },
-    ],
+    'no-var': 'error', // 禁止使用 var
+    // 优先使用 interface 而不是 type
+    '@typescript-eslint/consistent-type-definitions': ['error', 'interface'], //@typescript-eslint/consistent-type-definitions 是 @typescript-eslint/eslint-plugin 新增的规则。
   },
 };
